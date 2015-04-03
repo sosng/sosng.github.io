@@ -19,13 +19,36 @@
 1- (NSString *)description &amp;#123;&amp;#10;    NSString *descriptinString = [NSString stringWithFormat:@&amp;#34;Name:%@, id :%@, class:%@&amp;#34;, _">
   
   
+    <link rel="icon" href="/favicon.png">
+  
 
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
   
   
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61445500-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
+
+  
+    <style type="text/css">
+      .logo { background-image:url(http://ppoffice.github.io/hexo-theme-hueman/css/images/logo-header.png); }
+    </style>
   
 
   
@@ -51,6 +74,12 @@
           <a id="main-nav-toggle" class="nav-icon"></a>
           <div class="nav-container-inner">
             <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Objective-c/">Objective-c</a></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
               
             </ul>
             <nav id="sub-nav">
@@ -98,7 +127,8 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (NSString *)description &#123;&#10;    NSString *descriptinString = [NSString stringWithFormat:@&#34;Name:%@, id :%@, class:%@&#34;, _name, _id, [self class]];&#10;    return descriptinString;&#10;&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="继承">继承</h2><p>OC中实现继承的基本格式：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &#34;&#29238;&#31867;.h&#34;&#10;@interface &#23376;&#31867; : &#29238;&#31867;&#10;@end</span><br></pre></td></tr></table></figure>
-<p>子类拥有父类所有的方法和属性。</p>
+<p>子类拥有父类公开的方法和属性。</p>
+<p>继承必须要有共同的属性或者行为。</p>
 <h3 id="访问权限控制">访问权限控制</h3><p>如果父类某属性或者方法不能被子类继承，需要在属性或者方法前面添加 <code>访问权限修饰符</code> <strong>@private</strong></p>
 <table>
 <thead>
@@ -126,17 +156,18 @@
 </tr>
 </tbody>
 </table>
-<h3 id="方法重写">方法重写</h3><p>子类继承父类后，可以重写从父类继承的方法, 以下为例：</p>
+<h3 id="方法重写">方法重写</h3><p>子类继承父类后，可以重写从父类继承的方法, 扩展已存在的方法，以下为例：</p>
 <p>父类Person：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@interface Person : NSObject &#123;&#10;    NSString *_name, *_id;&#10;@private&#10;    NSString *_smoking;&#10;&#125;&#10;- (void)speak;&#10;@end</span><br></pre></td></tr></table></figure>
 <p>子类Student(省略了实现部分)：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@implementation Student&#10;- (void)speak &#123;&#10;    NSLog(@&#34;&#25105;&#26159;&#23398;&#29983;&#65281;&#34;);&#10;&#125;&#10;@end</span><br></pre></td></tr></table></figure>
-<h3 id="super关键字">super关键字</h3><p>父类也称之为超类，如果需要引用父类的属性，或者像父类的方法传递消息，需要使用<code>super</code>关键字</p>
+<h3 id="super关键字">super关键字</h3><p>父类也称之为<code>超类</code>，如果需要引用父类的属性，或者向父类的方法传递消息，需要使用<code>super</code>关键字</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)speak &#123;&#10;    [super speak];&#10;    NSLog(@&#34;&#25105;&#26159;&#23398;&#29983;&#65281;&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="self关键字">self关键字</h3><p>调用当前方法的<strong>对象</strong>或者<strong>类</strong>， 注意的是，类使用self关键字的时候，必须调用的是类方法。</p>
 <h2 id="多态">多态</h2>
       </div>
       <footer class="article-footer">
-        <a data-url="http://yoursite.com/2015/04/03/Objective-c-继承和多态/" data-id="ci80yzjfa000a5mw3fjun2jbq" class="article-share-link">分享到</a>
+        <a data-url="http://yoursite.com/2015/04/03/Objective-c-继承和多态/" data-id="ci813kliy000adzw3d9aqn8g1" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSObject/">NSObject</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OOP/">OOP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-c/">Objective-c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/super/">super</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/继承/">继承</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
@@ -153,6 +184,18 @@
   <div class="sidebar-top">
     <p>关注我 :</p>
     <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/sosng"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="/"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="google_plus" href="/"><i id="icon-google_plus" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/sosng"><i id="icon-github" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="weibo" href="/"><i id="icon-weibo" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="rss" href="/"><i id="icon-rss" class="icon"></i></a></li>
       
     </ul>
   </div>
@@ -171,6 +214,121 @@
 
   
   <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post">
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/2015/04/03/Objective-c-继承和多态/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Objective-c/">Objective-c</a></p>
+              <p class="item-title"><a href="/2015/04/03/Objective-c-继承和多态/" class="title">Objective-c 继承和多态</a></p>
+              <p class="item-date"><time datetime="2015-04-03T01:15:06.000Z" itemprop="datePublished">2015-04-03</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/2015/04/02/Objective-c-start/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Objective-c/">Objective-c</a></p>
+              <p class="item-title"><a href="/2015/04/02/Objective-c-start/" class="title">Objective-c Start</a></p>
+              <p class="item-date"><time datetime="2015-04-02T14:01:27.000Z" itemprop="datePublished">2015-04-02</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/2015/04/02/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/04/02/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2015-04-02T11:50:47.000Z" itemprop="datePublished">2015-04-02</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Objective-c/">Objective-c</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSObject/">NSObject</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-c/">Objective-c</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/">super</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NSObject/" style="font-size: 10px;">NSObject</a><a href="/tags/OOP/" style="font-size: 20px;">OOP</a><a href="/tags/Objective-c/" style="font-size: 20px;">Objective-c</a><a href="/tags/super/" style="font-size: 10px;">super</a><a href="/tags/继承/" style="font-size: 10px;">继承</a><a href="/tags/面向对象/" style="font-size: 20px;">面向对象</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
     
   </div>
 </aside>
@@ -199,7 +357,12 @@
 
 
 
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
 
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
 
 
 <script src="/js/html-patch.js" type="text/javascript"></script>
