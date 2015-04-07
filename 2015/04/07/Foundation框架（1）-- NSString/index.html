@@ -164,6 +164,9 @@ ga('send', 'pageview');
 </li>
 <li><p><a href="#比较">比较</a></p>
 </li>
+<li><p><a href="#各种转换">各种转换</a></p>
+</li>
+<li></li>
 </ul>
 <h4 id="初始化字符串"><a name="初始化字符串">初始化字符串</a></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NSString常量字符串</span></span><br><span class="line">NSString *<span class="built_in">string</span> = @<span class="string">"This is a const string."</span>;</span><br><span class="line"><span class="comment">//使用NSString实例方法初始化</span></span><br><span class="line">NSString *string1 = [[NSString alloc] initWithString:<span class="built_in">string</span>];</span><br><span class="line">NSString *string2 = [[NSString alloc] initWithFormat:@<span class="string">"%d%f"</span>, <span class="number">2</span>, <span class="number">3.3</span>];</span><br></pre></td></tr></table></figure>
 <p>使用<code>便利构造器</code>初始化</p>
@@ -180,6 +183,12 @@ ga('send', 'pageview');
 <h4 id="比较"><a name="比较">比较</a></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSComparisonResult compareResult = [<span class="built_in">string</span> compare:string9];</span><br></pre></td></tr></table></figure>
 <p>其返回值<code>NScomparisonReslut</code>是一个枚举类型的数据：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> &#123;</span><br><span class="line">   NSOrderedAscending = -<span class="number">1</span>,  <span class="comment">//升序</span></span><br><span class="line">   NSOrderedSame,			 <span class="comment">//相等</span></span><br><span class="line">   NSOrderedDescending       <span class="comment">//降序</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> NSInteger NSComparisonResult;</span><br></pre></td></tr></table></figure>
+<h4 id="各种转换"><a name="各种转换">各种转换</a></h4><p><code>NSString</code>类型转换为其他类型：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//转换为其他类型</span></span><br><span class="line">NSInteger intgerValue = [@<span class="string">"c"</span> integerValue];</span><br><span class="line"><span class="keyword">float</span> floatValue = [@<span class="string">"3.14"</span> floatValue];</span><br><span class="line"><span class="keyword">double</span> doubleValue = [@<span class="string">"2.333"</span> doubleValue];</span><br><span class="line"><span class="comment">//注意BOOL类型:</span></span><br><span class="line">BOOL boolValue = [@<span class="string">"ooo"</span> boolValue];</span><br></pre></td></tr></table></figure>
+<p>  字符串与数组的互相转换</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//将字符串分割为数组</span></span><br><span class="line">NSString *string12 = @<span class="string">"123-456-789"</span>;</span><br><span class="line">NSArray *<span class="built_in">array</span> = [string12 componentsSeparatedByString:@<span class="string">"-"</span>];</span><br><span class="line">NSLog(@<span class="string">"arr = %@"</span>, <span class="built_in">array</span>);</span><br><span class="line"><span class="comment">//将数组拼接成字符串</span></span><br><span class="line">NSString *string13 = [<span class="built_in">array</span> componentsJoinedByString:@<span class="string">"."</span>];</span><br></pre></td></tr></table></figure>
+<p>  大小写转换</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//转换大小写</span></span><br><span class="line">NSString *string10 = [<span class="built_in">string</span> uppercaseString];</span><br><span class="line">NSString *string11 = [<span class="built_in">string</span> lowercaseString];</span><br><span class="line"><span class="comment">//首字母大写</span></span><br><span class="line">NSString *string12 = [<span class="built_in">string</span> capitalizedString];</span><br></pre></td></tr></table></figure>
 <h3 id="NSMutableString">NSMutableString</h3><p><code>NSMutableString</code>是继承自<code>NSString</code>的，它的所有方法都是实例方法，返回值都是<code>void</code>，都是对消息传递者本身进行修改。</p>
 <ul>
 <li><p>初始化</p>
@@ -197,7 +206,7 @@ ga('send', 'pageview');
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://yoursite.com/2015/04/07/Foundation框架（1）-- NSString/" data-id="ci877j9oa000lfcw3q8hvowsf" class="article-share-link">分享到</a>
+        <a data-url="http://yoursite.com/2015/04/07/Foundation框架（1）-- NSString/" data-id="ci878dm6i000lhbw3p9c3qtth" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BOOL/">BOOL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Foundation/">Foundation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSRange/">NSRange</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSString/">NSString</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li></ul>
