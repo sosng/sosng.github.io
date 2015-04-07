@@ -6,17 +6,17 @@
   <title>Objective-C 继承和多态 | Luula</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
-1- (NSString *)description &amp;#123;&amp;#10;    NSString *descriptionString = [NSString stringWithFormat:@&amp;#34;Name:%@, id :%@, class:%@&amp;#34;,">
+1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objective-C 继承和多态">
 <meta property="og:url" content="http://yoursite.com/2015/04/03/Objective-C-继承和多态/index.html">
 <meta property="og:site_name" content="Luula">
 <meta property="og:description" content="description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
-1- (NSString *)description &amp;#123;&amp;#10;    NSString *descriptionString = [NSString stringWithFormat:@&amp;#34;Name:%@, id :%@, class:%@&amp;#34;,">
+1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C 继承和多态">
 <meta name="twitter:description" content="description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
-1- (NSString *)description &amp;#123;&amp;#10;    NSString *descriptionString = [NSString stringWithFormat:@&amp;#34;Name:%@, id :%@, class:%@&amp;#34;,">
+1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id">
   
   
     <link rel="icon" href="/favicon.png">
@@ -124,7 +124,7 @@ ga('send', 'pageview');
       </p>
       <div class="article-entry" itemprop="articleBody">
         <h2 id="description方法">description方法</h2><p>在OC中，使用<code>NSLog</code>输出自定义对象，需要重写从<code>NSObject</code>继承的<em>description</em>方法</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (NSString *)description &#123;&#10;    NSString *descriptionString = [NSString stringWithFormat:@&#34;Name:%@, id :%@, class:%@&#34;, _name, _id, [self class]];&#10;    return descriptionString;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (NSString *)description &#123;</span><br><span class="line">    NSString *descriptionString = [NSString stringWithFormat:@<span class="string">"Name:%@, id :%@, class:%@"</span>, _name, _id, [self <span class="keyword">class</span>]];</span><br><span class="line">    <span class="keyword">return</span> descriptionString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="继承">继承</h2><p>OC中实现继承的基本格式：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &#34;&#29238;&#31867;.h&#34;&#10;@interface &#23376;&#31867; : &#29238;&#31867;&#10;@end</span><br></pre></td></tr></table></figure>
 <p>子类拥有父类公开的方法和属性。</p>
@@ -167,7 +167,7 @@ ga('send', 'pageview');
 <h2 id="多态">多态</h2>
       </div>
       <footer class="article-footer">
-        <a data-url="http://yoursite.com/2015/04/03/Objective-C-继承和多态/" data-id="ci878hfht0001i3w3frpwph6b" class="article-share-link">分享到</a>
+        <a data-url="http://yoursite.com/2015/04/03/Objective-C-继承和多态/" data-id="ci878l1ts0001isw3mmvqsxyf" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSObject/">NSObject</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OOP/">OOP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/super/">super</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/继承/">继承</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
