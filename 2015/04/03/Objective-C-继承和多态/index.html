@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Luula</title>
+  <title>Objective-C 继承和多态 | Luula</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luula">
-<meta property="og:url" content="http://yoursite.com/tags/NSRange/index.html">
+  <meta name="description" content="description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
+1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Objective-C 继承和多态">
+<meta property="og:url" content="http://yoursite.com/2015/04/03/Objective-C-继承和多态/index.html">
 <meta property="og:site_name" content="Luula">
-<meta property="og:description">
+<meta property="og:description" content="description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
+1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luula">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Objective-C 继承和多态">
+<meta name="twitter:description" content="description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
+1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id">
   
   
     <link rel="icon" href="/favicon.png">
@@ -96,69 +99,83 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>NSRange</em></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/Objective-C/">Objective-C</a></h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-Objective-C-继承和多态" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/07/Foundation框架（1）-- NSString/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <h1 class="article-title" itemprop="name">
+      Objective-C 继承和多态
+    </h1>
   
 
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/04/03/Objective-C-继承和多态/" class="article-date">
+  <time datetime="2015-04-03T01:15:06.000Z" itemprop="datePublished">2015-04-03</time>
 </a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-07T01:20:30.000Z" itemprop="datePublished">2015-04-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/07/Foundation框架（1）-- NSString/" class="title">Foundation框架（1）-- NSString、BOOL、NSRange</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        BOOL类型在OC中， 布尔类型有 bool、 BOOL、 Boolean等，常用的是BOOL。
-注意的是，BOOL实际类型是 signed char，YES是1，其他所有值都是NO;
-NSStringNSString 实例化后即是字符串对象. NSString表示不可变的字符串，其子类可变字符串为NSMutableString。
-NSString常用方法
-初始化字符串
-
-拼接
-
-查找
-
-替换
-
-
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="description方法">description方法</h2><p>在OC中，使用<code>NSLog</code>输出自定义对象，需要重写从<code>NSObject</code>继承的<em>description</em>方法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (NSString *)description &#123;</span><br><span class="line">    NSString *descriptionString = [NSString stringWithFormat:@<span class="string">"Name:%@, id :%@, class:%@"</span>, _name, _id, [self <span class="keyword">class</span>]];</span><br><span class="line">    <span class="keyword">return</span> descriptionString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="继承">继承</h2><p>OC中实现继承的基本格式：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &#34;&#29238;&#31867;.h&#34;&#10;@interface &#23376;&#31867; : &#29238;&#31867;&#10;@end</span><br></pre></td></tr></table></figure>
+<p>子类拥有父类公开的方法和属性。</p>
+<p>继承必须要有共同的属性或者行为。</p>
+<h3 id="访问权限控制">访问权限控制</h3><p>如果父类某属性或者方法不能被子类继承，需要在属性或者方法前面添加 <code>访问权限修饰符</code> <strong>@private</strong></p>
+<table>
+<thead>
+<tr>
+<th>keywords</th>
+<th>权限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@public</td>
+<td>公开的，任何地方都可以访问</td>
+</tr>
+<tr>
+<td>@protected</td>
+<td>默认，自己类里面和子类</td>
+</tr>
+<tr>
+<td>@private</td>
+<td>私有，仅限本类使用</td>
+</tr>
+<tr>
+<td>@package</td>
+<td>很少使用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="方法重写">方法重写</h3><p>子类继承父类后，可以重写从父类继承的方法, 扩展已存在的方法，以下为例：</p>
+<p>父类Person：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@interface Person : NSObject &#123;&#10;    NSString *_name, *_id;&#10;@private&#10;    NSString *_smoking;&#10;&#125;&#10;- (void)speak;&#10;@end</span><br></pre></td></tr></table></figure>
+<p>子类Student(省略了实现部分)：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@implementation Student&#10;- (void)speak &#123;&#10;    NSLog(@&#34;&#25105;&#26159;&#23398;&#29983;&#65281;&#34;);&#10;&#125;&#10;@end</span><br></pre></td></tr></table></figure>
+<h3 id="super关键字">super关键字</h3><p>父类也称之为<code>超类</code>，如果需要引用父类的属性，或者向父类的方法传递消息，需要使用<code>super</code>关键字</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)speak &#123;&#10;    [super speak];&#10;    NSLog(@&#34;&#25105;&#26159;&#23398;&#29983;&#65281;&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="self关键字">self关键字</h3><p>调用当前方法的<strong>对象</strong>或者<strong>类</strong>， 注意的是，类使用self关键字的时候，必须调用的是类方法。</p>
+<h2 id="多态">多态</h2>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yoursite.com/2015/04/03/Objective-C-继承和多态/" data-id="ci8790qq80001kfw3ecxfdlqc" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSObject/">NSObject</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OOP/">OOP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/super/">super</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/继承/">继承</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-
 
             </div>
           </section>
@@ -182,6 +199,29 @@ NSString常用方法
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/07/Foundation框架（1）-- NSString/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          Foundation框架（1）-- NSString、BOOL、NSRange
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2015/04/02/Objective-C-intro/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Objective-c Intro</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
