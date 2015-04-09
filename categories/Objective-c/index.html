@@ -119,6 +119,82 @@ ga('send', 'pageview');
         
   <article class="article article-summary">
     <div class="article-summary-inner">
+      <a href="/2015/04/09/内存管理-2-实现/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
+        <p class="date"><time datetime="2015-04-09T10:43:25.000Z" itemprop="datePublished">2015-04-09</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2015/04/09/内存管理-2-实现/" class="title">内存管理(2)--实现</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        基本原则
+任何创建的对象都获得其所有(包括 alloc ,new ,copy等关键字获得的对象)
+通过retain获得对象的所有权
+如果不需要一个对象了，必须释放所有权
+不能释放没有所有权的对象
+
+基本操作123Person *person0 = [[Person alloc]init]; //1NSLog(@&quot;%lu&quot;, [person0 retainCount]);[person0 relea
+      </p>
+    </div>
+  </article>
+
+    
+  
+    
+    
+    
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      <a href="/2015/04/08/内存管理-1-基本原理/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
+        <p class="date"><time datetime="2015-04-08T14:36:26.000Z" itemprop="datePublished">2015-04-08</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2015/04/08/内存管理-1-基本原理/" class="title">内存管理(1)--基本原理</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        什么是内存管理
+移动设备的内存有限，每个app使用的内存受到限制
+当app所占用的内存较多时，系统会发出内存警告，这时需要回收一些不需要再使用的内存空间
+管理范围：任何继承于NSObject的对象，对其他基本数据类型等都w无效
+
+引用计数器
+每个OC对象都有自己的引用计数器，是一个整数，标示对象被引用的次数，即有多少人正在使用这个OC对象
+每个OC对象内部专门有4个字节的存储空间来存储引用计数器
+
+      </p>
+    </div>
+  </article>
+
+    
+      </div>
+    
+  
+    
+    
+    
+    
+      <div class="article-row">
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
       <a href="/2015/04/07/Foundation框架（2）-NSArray、NSSet、NSDictionary/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
@@ -301,6 +377,38 @@ NSString常用方法
         
           <li>
             <div class="item-thumbnail">
+              <a href="/2015/04/09/内存管理-2-实现/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
+              <p class="item-title"><a href="/2015/04/09/内存管理-2-实现/" class="title">内存管理(2)--实现</a></p>
+              <p class="item-date"><time datetime="2015-04-09T10:43:25.000Z" itemprop="datePublished">2015-04-09</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/2015/04/08/内存管理-1-基本原理/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
+              <p class="item-title"><a href="/2015/04/08/内存管理-1-基本原理/" class="title">内存管理(1)--基本原理</a></p>
+              <p class="item-date"><time datetime="2015-04-08T14:36:26.000Z" itemprop="datePublished">2015-04-08</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
               <a href="/2015/04/07/Foundation框架（2）-NSArray、NSSet、NSDictionary/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
@@ -347,39 +455,6 @@ NSString常用方法
             </div>
           </li>
         
-          <li>
-            <div class="item-thumbnail">
-              <a href="/2015/04/02/Objective-C-intro/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xif9v.com1.z0.glb.clouddn.com/OCIntro.jpg
-)" alt="Objective-c Intro" class="thumbnail-image"></span>
-  
-
-</a>
-            </div>
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-              <p class="item-title"><a href="/2015/04/02/Objective-C-intro/" class="title">Objective-c Intro</a></p>
-              <p class="item-date"><time datetime="2015-04-02T14:01:27.000Z" itemprop="datePublished">2015-04-02</time></p>
-            </div>
-          </li>
-        
-          <li>
-            <div class="item-thumbnail">
-              <a href="/2015/04/02/hello-world/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-            </div>
-            <div class="item-inner">
-              <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/04/02/hello-world/" class="title">Hello World</a></p>
-              <p class="item-date"><time datetime="2015-04-02T11:50:47.000Z" itemprop="datePublished">2015-04-02</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -389,7 +464,7 @@ NSString常用方法
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Objective-C/">Objective-C</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Objective-C/">Objective-C</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -399,7 +474,7 @@ NSString常用方法
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -409,7 +484,7 @@ NSString常用方法
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOOL/">BOOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Foundation/">Foundation</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSArray/">NSArray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDictionar/">NSDictionar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSObject/">NSObject</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSRange/">NSRange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSet/">NSSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSString/">NSString</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/">super</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC/">ARC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOOL/">BOOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Foundation/">Foundation</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MRC/">MRC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSArray/">NSArray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDictionar/">NSDictionar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSObject/">NSObject</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSRange/">NSRange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSet/">NSSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSString/">NSString</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/">super</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -419,7 +494,7 @@ NSString常用方法
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/BOOL/" style="font-size: 10px;">BOOL</a><a href="/tags/Foundation/" style="font-size: 15px;">Foundation</a><a href="/tags/NSArray/" style="font-size: 10px;">NSArray</a><a href="/tags/NSDictionar/" style="font-size: 10px;">NSDictionar</a><a href="/tags/NSObject/" style="font-size: 10px;">NSObject</a><a href="/tags/NSRange/" style="font-size: 10px;">NSRange</a><a href="/tags/NSSet/" style="font-size: 10px;">NSSet</a><a href="/tags/NSString/" style="font-size: 10px;">NSString</a><a href="/tags/OOP/" style="font-size: 15px;">OOP</a><a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a><a href="/tags/super/" style="font-size: 10px;">super</a><a href="/tags/继承/" style="font-size: 10px;">继承</a><a href="/tags/面向对象/" style="font-size: 15px;">面向对象</a>
+      <a href="/tags/ARC/" style="font-size: 15px;">ARC</a><a href="/tags/BOOL/" style="font-size: 10px;">BOOL</a><a href="/tags/Foundation/" style="font-size: 15px;">Foundation</a><a href="/tags/MRC/" style="font-size: 15px;">MRC</a><a href="/tags/NSArray/" style="font-size: 10px;">NSArray</a><a href="/tags/NSDictionar/" style="font-size: 10px;">NSDictionar</a><a href="/tags/NSObject/" style="font-size: 10px;">NSObject</a><a href="/tags/NSRange/" style="font-size: 10px;">NSRange</a><a href="/tags/NSSet/" style="font-size: 10px;">NSSet</a><a href="/tags/NSString/" style="font-size: 10px;">NSString</a><a href="/tags/OOP/" style="font-size: 15px;">OOP</a><a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a><a href="/tags/super/" style="font-size: 10px;">super</a><a href="/tags/内存管理/" style="font-size: 15px;">内存管理</a><a href="/tags/继承/" style="font-size: 10px;">继承</a><a href="/tags/面向对象/" style="font-size: 15px;">面向对象</a>
     </div>
   </div>
 

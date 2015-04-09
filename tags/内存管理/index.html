@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Luula">
-<meta property="og:url" content="http://yoursite.com/tags/OOP/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/内存管理/index.html">
 <meta property="og:site_name" content="Luula">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>OOP</em></h1>
+              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>内存管理</em></h1>
             </div>
             <div class="main-body-content">
               
@@ -119,7 +119,7 @@ ga('send', 'pageview');
         
   <article class="article article-summary">
     <div class="article-summary-inner">
-      <a href="/2015/04/03/Objective-C-继承和多态/" class="thumbnail">
+      <a href="/2015/04/09/内存管理-2-实现/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -127,15 +127,20 @@ ga('send', 'pageview');
 </a>
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-03T01:15:06.000Z" itemprop="datePublished">2015-04-03</time></p>
+        <p class="date"><time datetime="2015-04-09T10:43:25.000Z" itemprop="datePublished">2015-04-09</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/04/03/Objective-C-继承和多态/" class="title">Objective-C 继承和多态</a>
+        <a href="/2015/04/09/内存管理-2-实现/" class="title">内存管理(2)--实现</a>
       </h2>
       <p class="article-excerpt">
         
-        description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
-1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id
+        基本原则
+任何创建的对象都获得其所有(包括 alloc ,new ,copy等关键字获得的对象)
+通过retain获得对象的所有权
+如果不需要一个对象了，必须释放所有权
+不能释放没有所有权的对象
+
+基本操作123Person *person0 = [[Person alloc]init]; //1NSLog(@&quot;%lu&quot;, [person0 retainCount]);[person0 relea
       </p>
     </div>
   </article>
@@ -149,36 +154,30 @@ ga('send', 'pageview');
         
   <article class="article article-summary">
     <div class="article-summary-inner">
-      <a href="/2015/04/02/Objective-C-intro/" class="thumbnail">
+      <a href="/2015/04/08/内存管理-1-基本原理/" class="thumbnail">
   
-    <span style="background-image:url(http://7xif9v.com1.z0.glb.clouddn.com/OCIntro.jpg
-)" alt="Objective-c Intro" class="thumbnail-image"></span>
+    <span class="thumbnail-image thumbnail-none"></span>
   
 
 </a>
       <div class="article-meta">
         <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-02T14:01:27.000Z" itemprop="datePublished">2015-04-02</time></p>
+        <p class="date"><time datetime="2015-04-08T14:36:26.000Z" itemprop="datePublished">2015-04-08</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/04/02/Objective-C-intro/" class="title">Objective-c Intro</a>
+        <a href="/2015/04/08/内存管理-1-基本原理/" class="title">内存管理(1)--基本原理</a>
       </h2>
       <p class="article-excerpt">
         
-        
-面向对象编程OOP (Object-Oriented Programming)：面向对象编程
-类和对象
-类对某一物体类的抽象描述
+        什么是内存管理
+移动设备的内存有限，每个app使用的内存受到限制
+当app所占用的内存较多时，系统会发出内存警告，这时需要回收一些不需要再使用的内存空间
+管理范围：任何继承于NSObject的对象，对其他基本数据类型等都w无效
 
-类只是一个抽象的概念，没有具体指向某个特定的事物。
+引用计数器
+每个OC对象都有自己的引用计数器，是一个整数，标示对象被引用的次数，即有多少人正在使用这个OC对象
+每个OC对象内部专门有4个字节的存储空间来存储引用计数器
 
-万物皆对象
-
-任意一个事物都是一个对象，对象就是一个类对应的具体化的事物。
-方法和属性任何的类和对象都有方法和属性。
-属性 是指类的基础特征
-方法 是指类的一些行为
-类的声明和实现在Objective-C中，类名
       </p>
     </div>
   </article>

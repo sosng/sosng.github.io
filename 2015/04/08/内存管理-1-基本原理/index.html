@@ -3,17 +3,38 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Luula</title>
+  <title>内存管理(1)--基本原理 | Luula</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luula">
-<meta property="og:url" content="http://yoursite.com/tags/OOP/index.html">
+  <meta name="description" content="什么是内存管理
+移动设备的内存有限，每个app使用的内存受到限制
+当app所占用的内存较多时，系统会发出内存警告，这时需要回收一些不需要再使用的内存空间
+管理范围：任何继承于NSObject的对象，对其他基本数据类型等都w无效
+
+引用计数器
+每个OC对象都有自己的引用计数器，是一个整数，标示对象被引用的次数，即有多少人正在使用这个OC对象
+每个OC对象内部专门有4个字节的存储空间来存储引用计数器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内存管理(1)--基本原理">
+<meta property="og:url" content="http://yoursite.com/2015/04/08/内存管理-1-基本原理/index.html">
 <meta property="og:site_name" content="Luula">
-<meta property="og:description">
+<meta property="og:description" content="什么是内存管理
+移动设备的内存有限，每个app使用的内存受到限制
+当app所占用的内存较多时，系统会发出内存警告，这时需要回收一些不需要再使用的内存空间
+管理范围：任何继承于NSObject的对象，对其他基本数据类型等都w无效
+
+引用计数器
+每个OC对象都有自己的引用计数器，是一个整数，标示对象被引用的次数，即有多少人正在使用这个OC对象
+每个OC对象内部专门有4个字节的存储空间来存储引用计数器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luula">
-<meta name="twitter:description">
+<meta name="twitter:title" content="内存管理(1)--基本原理">
+<meta name="twitter:description" content="什么是内存管理
+移动设备的内存有限，每个app使用的内存受到限制
+当app所占用的内存较多时，系统会发出内存警告，这时需要回收一些不需要再使用的内存空间
+管理范围：任何继承于NSObject的对象，对其他基本数据类型等都w无效
+
+引用计数器
+每个OC对象都有自己的引用计数器，是一个整数，标示对象被引用的次数，即有多少人正在使用这个OC对象
+每个OC对象内部专门有4个字节的存储空间来存储引用计数器">
   
   
     <link rel="icon" href="/favicon.png">
@@ -96,101 +117,81 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>OOP</em></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/Objective-C/">Objective-C</a></h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-内存管理-1-基本原理" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/03/Objective-C-继承和多态/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <h1 class="article-title" itemprop="name">
+      内存管理(1)--基本原理
+    </h1>
   
 
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/04/08/内存管理-1-基本原理/" class="article-date">
+  <time datetime="2015-04-08T14:36:26.000Z" itemprop="datePublished">2015-04-08</time>
 </a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-03T01:15:06.000Z" itemprop="datePublished">2015-04-03</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/03/Objective-C-继承和多态/" class="title">Objective-C 继承和多态</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
-1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h3 id="什么是内存管理">什么是内存管理</h3><ul>
+<li>移动设备的内存有限，每个app使用的内存受到限制</li>
+<li>当app所占用的内存较多时，系统会发出内存警告，这时需要回收一些不需要再使用的内存空间</li>
+<li>管理范围：任何<strong>继承于NSObject的对象</strong>，对其他<strong>基本数据类型</strong>等都<strong>w无效</strong></li>
+</ul>
+<h3 id="引用计数器">引用计数器</h3><ul>
+<li>每个OC对象都有自己的引用计数器，是一个整数，标示<strong>对象被引用的次数</strong>，即有多少人正在使用这个OC对象</li>
+<li>每个OC对象内部专门有<strong>4个字节</strong>的存储空间来存储引用计数器</li>
+<li>当一个对象的引用计数器为<strong>0</strong>时，说明对象可以被回收</li>
+</ul>
+<h3 id="引用计数器的操作">引用计数器的操作</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>引用计数器的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>retain</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>release</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>retainCount</td>
+<td>获得当前值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="对象销毁">对象销毁</h3><ul>
+<li><p>使用对象后调用<code>release</code>方法</p>
+</li>
+<li><p>重写对象的<code>dealloc</code>方法，当计数器归零时会自动调用此方法把对象销毁</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)dealloc &#123;</span><br><span class="line">    NSLog(@<span class="string">"%s"</span>, __FUNCTION__);</span><br><span class="line">    [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yoursite.com/2015/04/08/内存管理-1-基本原理/" data-id="ci8a42vj8000bs2w33vfblpho" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARC/">ARC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MRC/">MRC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存管理/">内存管理</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
   
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/02/Objective-C-intro/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xif9v.com1.z0.glb.clouddn.com/OCIntro.jpg
-)" alt="Objective-c Intro" class="thumbnail-image"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-02T14:01:27.000Z" itemprop="datePublished">2015-04-02</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/02/Objective-C-intro/" class="title">Objective-c Intro</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-面向对象编程OOP (Object-Oriented Programming)：面向对象编程
-类和对象
-类对某一物体类的抽象描述
-
-类只是一个抽象的概念，没有具体指向某个特定的事物。
-
-万物皆对象
-
-任意一个事物都是一个对象，对象就是一个类对应的具体化的事物。
-方法和属性任何的类和对象都有方法和属性。
-属性 是指类的基础特征
-方法 是指类的一些行为
-类的声明和实现在Objective-C中，类名
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-  
-    </div></section>
-  
-
 
             </div>
           </section>
@@ -214,6 +215,29 @@ ga('send', 'pageview');
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/09/内存管理-2-实现/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          内存管理(2)--实现
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2015/04/07/Foundation框架（2）-NSArray、NSSet、NSDictionary/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Foundation框架（2）-- NSArray、NSSet、NSDictionary</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
