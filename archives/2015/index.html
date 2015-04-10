@@ -119,6 +119,40 @@ ga('send', 'pageview');
         
   <article class="article article-summary">
     <div class="article-summary-inner">
+      <a href="/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+      <div class="article-meta">
+        <p class="category"></p>
+        <p class="date"><time datetime="2015-04-09T14:37:29.000Z" itemprop="datePublished">2015-04-09</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" class="title">Xcode升级到6.3后插件失效的解决方法</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
+首先使用下面的命令得到当前版本Xcode的UUID:
+1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+得到的结果是
+
+9F75337B-21B4-4A
+      </p>
+    </div>
+  </article>
+
+    
+  
+    
+    
+    
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
       <a href="/2015/04/09/内存管理-2-实现/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
@@ -135,21 +169,25 @@ ga('send', 'pageview');
       <p class="article-excerpt">
         
         基本原则
-任何创建的对象都获得其所有(包括 alloc ,new ,copy等关键字获得的对象)
-通过retain获得对象的所有权
-如果不需要一个对象了，必须释放所有权
-不能释放没有所有权的对象
+在一定的代码段中，copy、alloc、retain的次数应该和release、autorelease的次数相同
+通过retain获得对象的持有
+如果不需要一个对象了，必须释放持有权
+不能释放没有持有权的对象
 
-基本操作123Person *person0 = [[Person alloc]init]; //1NSLog(@&quot;%lu&quot;, [person0 retainCount]);[person0 relea
+基本操作123Person *person0 = [[Person alloc]init]; //1NSLog(@&quot;%lu&quot;, [person0 retainCount]);[p
       </p>
     </div>
   </article>
 
     
+      </div>
+    
   
     
     
     
+    
+      <div class="article-row">
     
         
   <article class="article article-summary">
@@ -183,14 +221,10 @@ ga('send', 'pageview');
   </article>
 
     
-      </div>
-    
   
     
     
     
-    
-      <div class="article-row">
     
         
   <article class="article article-summary">
@@ -217,10 +251,14 @@ ga('send', 'pageview');
   </article>
 
     
+      </div>
+    
   
     
     
     
+    
+      <div class="article-row">
     
         
   <article class="article article-summary">
@@ -258,14 +296,10 @@ NSString常用方法
   </article>
 
     
-      </div>
-    
   
     
     
     
-    
-      <div class="article-row">
     
         
   <article class="article article-summary">
@@ -292,10 +326,14 @@ NSString常用方法
   </article>
 
     
+      </div>
+    
   
     
     
     
+    
+      <div class="article-row">
     
         
   <article class="article article-summary">
@@ -335,14 +373,10 @@ NSString常用方法
   </article>
 
     
-      </div>
-    
   
     
     
     
-    
-      <div class="article-row">
     
         
   <article class="article article-summary">
@@ -410,6 +444,22 @@ Quick
         
           <li>
             <div class="item-thumbnail">
+              <a href="/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" class="title">Xcode升级到6.3后插件失效的解决方法</a></p>
+              <p class="item-date"><time datetime="2015-04-09T14:37:29.000Z" itemprop="datePublished">2015-04-09</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
               <a href="/2015/04/09/内存管理-2-实现/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
@@ -472,22 +522,6 @@ Quick
             </div>
           </li>
         
-          <li>
-            <div class="item-thumbnail">
-              <a href="/2015/04/03/Objective-C-继承和多态/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-            </div>
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-              <p class="item-title"><a href="/2015/04/03/Objective-C-继承和多态/" class="title">Objective-C 继承和多态</a></p>
-              <p class="item-date"><time datetime="2015-04-03T01:15:06.000Z" itemprop="datePublished">2015-04-03</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -507,7 +541,7 @@ Quick
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -517,7 +551,7 @@ Quick
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC/">ARC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOOL/">BOOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Foundation/">Foundation</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MRC/">MRC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSArray/">NSArray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDictionar/">NSDictionar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSObject/">NSObject</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSRange/">NSRange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSet/">NSSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSString/">NSString</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/">super</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC/">ARC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOOL/">BOOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Foundation/">Foundation</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MRC/">MRC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSArray/">NSArray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDictionar/">NSDictionar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSObject/">NSObject</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSRange/">NSRange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSet/">NSSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSString/">NSString</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/">super</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -527,7 +561,7 @@ Quick
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ARC/" style="font-size: 15px;">ARC</a><a href="/tags/BOOL/" style="font-size: 10px;">BOOL</a><a href="/tags/Foundation/" style="font-size: 15px;">Foundation</a><a href="/tags/MRC/" style="font-size: 15px;">MRC</a><a href="/tags/NSArray/" style="font-size: 10px;">NSArray</a><a href="/tags/NSDictionar/" style="font-size: 10px;">NSDictionar</a><a href="/tags/NSObject/" style="font-size: 10px;">NSObject</a><a href="/tags/NSRange/" style="font-size: 10px;">NSRange</a><a href="/tags/NSSet/" style="font-size: 10px;">NSSet</a><a href="/tags/NSString/" style="font-size: 10px;">NSString</a><a href="/tags/OOP/" style="font-size: 15px;">OOP</a><a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a><a href="/tags/super/" style="font-size: 10px;">super</a><a href="/tags/内存管理/" style="font-size: 15px;">内存管理</a><a href="/tags/继承/" style="font-size: 10px;">继承</a><a href="/tags/面向对象/" style="font-size: 15px;">面向对象</a>
+      <a href="/tags/ARC/" style="font-size: 15px;">ARC</a><a href="/tags/BOOL/" style="font-size: 10px;">BOOL</a><a href="/tags/Foundation/" style="font-size: 15px;">Foundation</a><a href="/tags/MRC/" style="font-size: 15px;">MRC</a><a href="/tags/NSArray/" style="font-size: 10px;">NSArray</a><a href="/tags/NSDictionar/" style="font-size: 10px;">NSDictionar</a><a href="/tags/NSObject/" style="font-size: 10px;">NSObject</a><a href="/tags/NSRange/" style="font-size: 10px;">NSRange</a><a href="/tags/NSSet/" style="font-size: 10px;">NSSet</a><a href="/tags/NSString/" style="font-size: 10px;">NSString</a><a href="/tags/OOP/" style="font-size: 15px;">OOP</a><a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a><a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a><a href="/tags/super/" style="font-size: 10px;">super</a><a href="/tags/内存管理/" style="font-size: 15px;">内存管理</a><a href="/tags/继承/" style="font-size: 10px;">继承</a><a href="/tags/面向对象/" style="font-size: 15px;">面向对象</a>
     </div>
   </div>
 

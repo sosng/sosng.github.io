@@ -3,17 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Luula</title>
+  <title>Xcode升级到6.3后插件失效的解决方法 | Luula</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luula">
-<meta property="og:url" content="http://yoursite.com/archives/2015/04/index.html">
+  <meta name="description" content="尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
+首先使用下面的命令得到当前版本Xcode的UUID:
+1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+得到的结果是
+
+9F75337B-21B4-4A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode升级到6.3后插件失效的解决方法">
+<meta property="og:url" content="http://yoursite.com/2015/04/09/Xcode升级到6.3后插件失效的解决方法/index.html">
 <meta property="og:site_name" content="Luula">
-<meta property="og:description">
+<meta property="og:description" content="尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
+首先使用下面的命令得到当前版本Xcode的UUID:
+1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+得到的结果是
+
+9F75337B-21B4-4A">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luula">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Xcode升级到6.3后插件失效的解决方法">
+<meta name="twitter:description" content="尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
+首先使用下面的命令得到当前版本Xcode的UUID:
+1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+得到的结果是
+
+9F75337B-21B4-4A">
   
   
     <link rel="icon" href="/favicon.png">
@@ -96,320 +111,53 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-archive"></i>归档: 2015/4</h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-Xcode升级到6.3后插件失效的解决方法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Xcode升级到6.3后插件失效的解决方法
+    </h1>
+  
+
+        </header>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
+      <p class="article-byline">
+        <a href="/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" class="article-date">
+  <time datetime="2015-04-09T14:37:29.000Z" itemprop="datePublished">2015-04-09</time>
 </a>
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-04-09T14:37:29.000Z" itemprop="datePublished">2015-04-09</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" class="title">Xcode升级到6.3后插件失效的解决方法</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
-首先使用下面的命令得到当前版本Xcode的UUID:
-1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
-得到的结果是
-
-9F75337B-21B4-4A
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。</p>
+<p>首先使用下面的命令得到当前版本Xcode的<a href="http://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="external">UUID</a>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192</span>:~ sayaka$ defaults <span class="built_in">read</span> /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</span><br></pre></td></tr></table></figure>
+<p>得到的结果是</p>
+<blockquote>
+<p>9F75337B-21B4-4ADC-B558-F9CADF7073A7</p>
+</blockquote>
+<p>然后打开Xcode插件的安装目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192</span>:~ sayaka$ open ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins</span><br></pre></td></tr></table></figure>
+<p>在插件上右键点击<code>显示包内容</code>，打开<code>Contens</code>文件夹下面的<code>Info.plist</code>文件，找到<strong>key DVTPlugInCompatibilityUUIDs</strong>这一项，添加一个新的元素进去，value填写为上面得到的UUID，保存关闭。<br>将所有的插件都操作一遍，重启Xcode即可～</p>
+<p>以后的Xcode升级后遇到插件失效问题也是同样的方法，找到当前版本的UUID即可。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yoursite.com/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" data-id="ci8axiv0v000ieow3049lz0wm" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
   
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/09/内存管理-2-实现/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-09T10:43:25.000Z" itemprop="datePublished">2015-04-09</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/09/内存管理-2-实现/" class="title">内存管理(2)--实现</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        基本原则
-在一定的代码段中，copy、alloc、retain的次数应该和release、autorelease的次数相同
-通过retain获得对象的持有
-如果不需要一个对象了，必须释放持有权
-不能释放没有持有权的对象
-
-基本操作123Person *person0 = [[Person alloc]init]; //1NSLog(@&quot;%lu&quot;, [person0 retainCount]);[p
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-    
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/08/内存管理-1-基本原理/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-08T14:36:26.000Z" itemprop="datePublished">2015-04-08</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/08/内存管理-1-基本原理/" class="title">内存管理(1)--基本原理</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        什么是内存管理
-移动设备的内存有限，每个app使用的内存受到限制
-当app所占用的内存较多时，系统会发出内存警告，这时需要回收一些不需要再使用的内存空间
-管理范围：任何继承于NSObject的对象，对其他基本数据类型等都w无效
-
-引用计数器
-每个OC对象都有自己的引用计数器，是一个整数，标示对象被引用的次数，即有多少人正在使用这个OC对象
-每个OC对象内部专门有4个字节的存储空间来存储引用计数器
-
-      </p>
-    </div>
-  </article>
-
-    
-  
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/07/Foundation框架（2）-NSArray、NSSet、NSDictionary/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-07T13:57:09.000Z" itemprop="datePublished">2015-04-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/07/Foundation框架（2）-NSArray、NSSet、NSDictionary/" class="title">Foundation框架（2）-- NSArray、NSSet、NSDictionary</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        NSArrayNSArray:不可变数组，数组中的元素不一定为同一个类型，以nil作为结束标示。NSArray中只能存放OC对象、不能存放非OC对象类型，比如int、float等，也不能存放nil值。 如果需要存放空对象，使用 [NSNull null]。
-初始化12NSArray *array1 = @[@&quot;aka&quot;, @&quot;boku&quot;, [NSNull null]];  //不需要nil作为结束
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-    
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/07/Foundation框架（1）-- NSString/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-07T01:20:30.000Z" itemprop="datePublished">2015-04-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/07/Foundation框架（1）-- NSString/" class="title">Foundation框架（1）-- NSString、BOOL、NSRange</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        BOOL类型在OC中， 布尔类型有 bool、 BOOL、 Boolean等，常用的是BOOL。
-注意的是，BOOL实际类型是 signed char，YES是1，其他所有值都是NO;
-NSStringNSString 实例化后即是字符串对象. NSString表示不可变的字符串，其子类可变字符串为NSMutableString。
-NSString常用方法
-初始化字符串
-
-拼接
-
-查找
-
-替换
-
-
-      </p>
-    </div>
-  </article>
-
-    
-  
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/03/Objective-C-继承和多态/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-03T01:15:06.000Z" itemprop="datePublished">2015-04-03</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/03/Objective-C-继承和多态/" class="title">Objective-C 继承和多态</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        description方法在OC中，使用NSLog输出自定义对象，需要重写从NSObject继承的description方法
-1234- (NSString *)description &amp;#123;    NSString *descriptionString = [NSString stringWithFormat:@&quot;Name:%@, id :%@, class:%@&quot;, _name, _id
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-    
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/02/Objective-C-intro/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xif9v.com1.z0.glb.clouddn.com/OCIntro.jpg
-)" alt="Objective-c Intro" class="thumbnail-image"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-02T14:01:27.000Z" itemprop="datePublished">2015-04-02</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/02/Objective-C-intro/" class="title">Objective-c Intro</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-面向对象编程OOP (Object-Oriented Programming)：面向对象编程
-类和对象
-类对某一物体类的抽象描述
-
-类只是一个抽象的概念，没有具体指向某个特定的事物。
-
-万物皆对象
-
-任意一个事物都是一个对象，对象就是一个类对应的具体化的事物。
-方法和属性任何的类和对象都有方法和属性。
-属性 是指类的基础特征
-方法 是指类的一些行为
-类的声明和实现在Objective-C中，类名
-      </p>
-    </div>
-  </article>
-
-    
-  
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/02/hello-world/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-04-02T11:50:47.000Z" itemprop="datePublished">2015-04-02</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/02/hello-world/" class="title">Hello World</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-  
-    </div></section>
-  
-
 
             </div>
           </section>
@@ -433,6 +181,19 @@ Quick
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/04/09/内存管理-2-实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">内存管理(2)--实现</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
