@@ -7,28 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
 首先使用下面的命令得到当前版本Xcode的UUID:
-1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+1defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
 得到的结果是
 
-9F75337B-21B4-4A">
+9F75337B-21B4-4ADC-B558-F9CADF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode升级到6.3后插件失效的解决方法">
 <meta property="og:url" content="http://yoursite.com/2015/04/09/Xcode升级到6.3后插件失效的解决方法/index.html">
 <meta property="og:site_name" content="Luula">
 <meta property="og:description" content="尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
 首先使用下面的命令得到当前版本Xcode的UUID:
-1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+1defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
 得到的结果是
 
-9F75337B-21B4-4A">
+9F75337B-21B4-4ADC-B558-F9CADF">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode升级到6.3后插件失效的解决方法">
 <meta name="twitter:description" content="尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。
 首先使用下面的命令得到当前版本Xcode的UUID:
-1192:~ sayaka$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+1defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
 得到的结果是
 
-9F75337B-21B4-4A">
+9F75337B-21B4-4ADC-B558-F9CADF">
   
   
     <link rel="icon" href="/favicon.png">
@@ -137,19 +137,19 @@ ga('send', 'pageview');
       <div class="article-entry" itemprop="articleBody">
         <p>尝鲜升级到了Xcode 6.3，发现所有的插件都失效了，只有等待作者更新了再下载编译，不过还有更方便的办法。</p>
 <p>首先使用下面的命令得到当前版本Xcode的<a href="http://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="external">UUID</a>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192</span>:~ sayaka$ defaults <span class="built_in">read</span> /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults <span class="built_in">read</span> /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</span><br></pre></td></tr></table></figure>
 <p>得到的结果是</p>
 <blockquote>
 <p>9F75337B-21B4-4ADC-B558-F9CADF7073A7</p>
 </blockquote>
 <p>然后打开Xcode插件的安装目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192</span>:~ sayaka$ open ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins</span><br></pre></td></tr></table></figure>
 <p>在插件上右键点击<code>显示包内容</code>，打开<code>Contens</code>文件夹下面的<code>Info.plist</code>文件，找到<strong>key DVTPlugInCompatibilityUUIDs</strong>这一项，添加一个新的元素进去，value填写为上面得到的UUID，保存关闭。<br>将所有的插件都操作一遍，重启Xcode即可～</p>
 <p>以后的Xcode升级后遇到插件失效问题也是同样的方法，找到当前版本的UUID即可。</p>
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://yoursite.com/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" data-id="ci8axiv0v000ieow3049lz0wm" class="article-share-link">分享到</a>
+        <a data-url="http://yoursite.com/2015/04/09/Xcode升级到6.3后插件失效的解决方法/" data-id="ci8b0o4yc000io3w3svbzvzx1" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li></ul>
