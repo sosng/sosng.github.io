@@ -134,7 +134,7 @@ ga('send', 'pageview');
 <h3 id="KVO">KVO</h3><p>键值观察(Key-Value Observing, KVO)是一种通知机制，它能够在其他对象的属性发生改变的时候获得通知，是<a href="http://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA" target="_blank" rel="external">设计模式</a>)中的观察者模式的一种实现。</p>
 <p>观察者模式的实现主要有以下三个步骤：</p>
 <p> 1 设置观察者</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34987;&#35266;&#23519;&#32773;&#23545;&#35937;&#24212;&#35813;&#26159;&#35266;&#23519;&#32773;&#30340;&#19968;&#20010;&#23646;&#24615;&#10;person.h:&#10;&#10;@interface Person : NSObject&#10;@property (strong, nonatomic) Stock *stock;&#10;@end&#10;&#10;&#35774;&#32622;&#35266;&#23519;&#32773;&#10;&#10;- (void)setStock:(Stock *)stock &#123;&#10;    _stock = stock;&#10;    //&#21442;&#25968;&#65306; &#35266;&#23519;&#32773;&#12289;&#35266;&#23519;&#20540;&#12289;&#35266;&#23519;&#36873;&#39033;&#12289;&#19978;&#19979;&#25991;&#10;    [_stock addObserver:self forKeyPath:@&#34;price&#34; options:NSKeyValueObservingOptionNew context:nil];&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">被观察者对象应该是观察者的一个属性</span><br><span class="line">person<span class="variable">.h</span>:</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span> : <span class="title">NSObject</span></span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) Stock *stock;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line">设置观察者</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setStock:(Stock *)stock &#123;</span><br><span class="line">    _stock = stock;</span><br><span class="line">    <span class="comment">//参数： 观察者、观察值、观察选项、上下文</span></span><br><span class="line">    [_stock addObserver:<span class="keyword">self</span> forKeyPath:<span class="string">@"price"</span> options:NSKeyValueObservingOptionNew context:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>option参数：</p>
 <table>
 <thead>
@@ -196,7 +196,7 @@ ga('send', 'pageview');
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://sayaka.ninja/2015/04/14/KVC和KVO/" data-id="ci8l1jwob001pbbw32tvdctum" class="article-share-link">分享到</a>
+        <a data-url="http://sayaka.ninja/2015/04/14/KVC和KVO/" data-id="ci8n3m9np001u6qw3nvgtjrgg" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KVC/">KVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KVO/">KVO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li></ul>
@@ -262,6 +262,22 @@ ga('send', 'pageview');
         
           <li>
             <div class="item-thumbnail">
+              <a href="/2015/04/17/block/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
+              <p class="item-title"><a href="/2015/04/17/block/" class="title">block</a></p>
+              <p class="item-date"><time datetime="2015-04-17T08:08:15.000Z" itemprop="datePublished">2015-04-17</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
               <a href="/2015/04/15/Category-Extension/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
@@ -271,7 +287,7 @@ ga('send', 'pageview');
             </div>
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-              <p class="item-title"><a href="/2015/04/15/Category-Extension/" class="title">Category &amp; Extension</a></p>
+              <p class="item-title"><a href="/2015/04/15/Category-Extension/" class="title">Category &amp; Extension &amp; Protocol</a></p>
               <p class="item-date"><time datetime="2015-04-15T07:38:13.000Z" itemprop="datePublished">2015-04-15</time></p>
             </div>
           </li>
@@ -324,22 +340,6 @@ ga('send', 'pageview');
             </div>
           </li>
         
-          <li>
-            <div class="item-thumbnail">
-              <a href="/2015/04/10/Foundation框架 (3)--NSValue-NSDate-NSNumber/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-            </div>
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-              <p class="item-title"><a href="/2015/04/10/Foundation框架 (3)--NSValue-NSDate-NSNumber/" class="title">Foundation框架(3) -- NSValue NSDate NSNumber</a></p>
-              <p class="item-date"><time datetime="2015-04-10T07:32:25.000Z" itemprop="datePublished">2015-04-10</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -349,7 +349,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Objective-C/">Objective-C</a><span class="category-list-count">11</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Objective-C/">Objective-C</a><span class="category-list-count">12</span></li></ul>
     </div>
   </div>
 
@@ -359,7 +359,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">14</span></li></ul>
     </div>
   </div>
 
@@ -369,7 +369,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC/">ARC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOOL/">BOOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Foundation/">Foundation</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVC/">KVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVO/">KVO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MRR/">MRR</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSArray/">NSArray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDate/">NSDate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDictionar/">NSDictionar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSNumber/">NSNumber</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSObject/">NSObject</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSRange/">NSRange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSet/">NSSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSString/">NSString</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSUserDefaults/">NSUserDefaults</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSValue/">NSValue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/category/">category</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/copy/">copy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/extension/">extension</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mutableCopy/">mutableCopy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/property/">property</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/">super</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/属性/">属性</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/延展/">延展</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浅复制/">浅复制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深复制/">深复制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类目/">类目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC/">ARC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOOL/">BOOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Foundation/">Foundation</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVC/">KVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVO/">KVO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MRR/">MRR</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSArray/">NSArray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDate/">NSDate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSDictionar/">NSDictionar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSNumber/">NSNumber</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSObject/">NSObject</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSRange/">NSRange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSet/">NSSet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSString/">NSString</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSUserDefaults/">NSUserDefaults</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSValue/">NSValue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/block/">block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/category/">category</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/copy/">copy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/extension/">extension</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mutableCopy/">mutableCopy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/property/">property</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/protocol/">protocol</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/">super</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代理/">代理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/协议/">协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/属性/">属性</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扩展/">扩展</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浅复制/">浅复制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深复制/">深复制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类目/">类目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -379,7 +379,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ARC/" style="font-size: 13.33px;">ARC</a><a href="/tags/BOOL/" style="font-size: 10px;">BOOL</a><a href="/tags/Foundation/" style="font-size: 16.67px;">Foundation</a><a href="/tags/KVC/" style="font-size: 10px;">KVC</a><a href="/tags/KVO/" style="font-size: 10px;">KVO</a><a href="/tags/MRR/" style="font-size: 13.33px;">MRR</a><a href="/tags/NSArray/" style="font-size: 10px;">NSArray</a><a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a><a href="/tags/NSDictionar/" style="font-size: 10px;">NSDictionar</a><a href="/tags/NSNumber/" style="font-size: 10px;">NSNumber</a><a href="/tags/NSObject/" style="font-size: 10px;">NSObject</a><a href="/tags/NSRange/" style="font-size: 10px;">NSRange</a><a href="/tags/NSSet/" style="font-size: 10px;">NSSet</a><a href="/tags/NSString/" style="font-size: 10px;">NSString</a><a href="/tags/NSUserDefaults/" style="font-size: 10px;">NSUserDefaults</a><a href="/tags/NSValue/" style="font-size: 10px;">NSValue</a><a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a><a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a><a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a><a href="/tags/category/" style="font-size: 10px;">category</a><a href="/tags/copy/" style="font-size: 10px;">copy</a><a href="/tags/extension/" style="font-size: 10px;">extension</a><a href="/tags/mutableCopy/" style="font-size: 10px;">mutableCopy</a><a href="/tags/property/" style="font-size: 10px;">property</a><a href="/tags/super/" style="font-size: 10px;">super</a><a href="/tags/内存管理/" style="font-size: 13.33px;">内存管理</a><a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a><a href="/tags/属性/" style="font-size: 10px;">属性</a><a href="/tags/延展/" style="font-size: 10px;">延展</a><a href="/tags/浅复制/" style="font-size: 10px;">浅复制</a><a href="/tags/深复制/" style="font-size: 10px;">深复制</a><a href="/tags/类目/" style="font-size: 10px;">类目</a><a href="/tags/继承/" style="font-size: 10px;">继承</a><a href="/tags/面向对象/" style="font-size: 13.33px;">面向对象</a>
+      <a href="/tags/ARC/" style="font-size: 13.33px;">ARC</a><a href="/tags/BOOL/" style="font-size: 10px;">BOOL</a><a href="/tags/Foundation/" style="font-size: 16.67px;">Foundation</a><a href="/tags/KVC/" style="font-size: 10px;">KVC</a><a href="/tags/KVO/" style="font-size: 10px;">KVO</a><a href="/tags/MRR/" style="font-size: 13.33px;">MRR</a><a href="/tags/NSArray/" style="font-size: 10px;">NSArray</a><a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a><a href="/tags/NSDictionar/" style="font-size: 10px;">NSDictionar</a><a href="/tags/NSNumber/" style="font-size: 10px;">NSNumber</a><a href="/tags/NSObject/" style="font-size: 10px;">NSObject</a><a href="/tags/NSRange/" style="font-size: 10px;">NSRange</a><a href="/tags/NSSet/" style="font-size: 10px;">NSSet</a><a href="/tags/NSString/" style="font-size: 10px;">NSString</a><a href="/tags/NSUserDefaults/" style="font-size: 10px;">NSUserDefaults</a><a href="/tags/NSValue/" style="font-size: 10px;">NSValue</a><a href="/tags/OOP/" style="font-size: 13.33px;">OOP</a><a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a><a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a><a href="/tags/block/" style="font-size: 10px;">block</a><a href="/tags/category/" style="font-size: 10px;">category</a><a href="/tags/copy/" style="font-size: 10px;">copy</a><a href="/tags/extension/" style="font-size: 10px;">extension</a><a href="/tags/mutableCopy/" style="font-size: 10px;">mutableCopy</a><a href="/tags/property/" style="font-size: 10px;">property</a><a href="/tags/protocol/" style="font-size: 10px;">protocol</a><a href="/tags/super/" style="font-size: 10px;">super</a><a href="/tags/代理/" style="font-size: 10px;">代理</a><a href="/tags/内存管理/" style="font-size: 13.33px;">内存管理</a><a href="/tags/协议/" style="font-size: 10px;">协议</a><a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a><a href="/tags/属性/" style="font-size: 10px;">属性</a><a href="/tags/扩展/" style="font-size: 10px;">扩展</a><a href="/tags/浅复制/" style="font-size: 10px;">浅复制</a><a href="/tags/深复制/" style="font-size: 10px;">深复制</a><a href="/tags/类目/" style="font-size: 10px;">类目</a><a href="/tags/继承/" style="font-size: 10px;">继承</a><a href="/tags/面向对象/" style="font-size: 13.33px;">面向对象</a>
     </div>
   </div>
 
