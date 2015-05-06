@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Luula</title>
+  <title>POST异步请求封装 | Luula</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luula">
-<meta property="og:url" content="http://sayaka.ninja/tags/NSArray/index.html">
+  <meta name="description" content="初学IOS开发阶段，一般采用Fundation框架自带的网络请求方法。使用异步的方式进行网络请求，可以使用代理的方式实现。但是在很多情况下，一个工程中许多View需要进行网络请求，一个类也会实现了很多协议，代码量变得冗余，所以将常用的请求封装起来，并在其block中回调请求得到的数据。
+12345678910111213141516171819202122232425262728293031323">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POST异步请求封装">
+<meta property="og:url" content="http://sayaka.ninja/2015/05/06/POST网络请求封装/index.html">
 <meta property="og:site_name" content="Luula">
-<meta property="og:description">
+<meta property="og:description" content="初学IOS开发阶段，一般采用Fundation框架自带的网络请求方法。使用异步的方式进行网络请求，可以使用代理的方式实现。但是在很多情况下，一个工程中许多View需要进行网络请求，一个类也会实现了很多协议，代码量变得冗余，所以将常用的请求封装起来，并在其block中回调请求得到的数据。
+12345678910111213141516171819202122232425262728293031323">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luula">
-<meta name="twitter:description">
+<meta name="twitter:title" content="POST异步请求封装">
+<meta name="twitter:description" content="初学IOS开发阶段，一般采用Fundation框架自带的网络请求方法。使用异步的方式进行网络请求，可以使用代理的方式实现。但是在很多情况下，一个工程中许多View需要进行网络请求，一个类也会实现了很多协议，代码量变得冗余，所以将常用的请求封装起来，并在其block中回调请求得到的数据。
+12345678910111213141516171819202122232425262728293031323">
   
   
     <link rel="icon" href="/favicon.png">
@@ -96,58 +99,45 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>NSArray</em></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/IOS/">IOS</a></h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-POST网络请求封装" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/04/07/Foundation框架（2）-- NSArray、NSSet、NSDictionary/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <h1 class="article-title" itemprop="name">
+      POST异步请求封装
+    </h1>
   
 
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/05/06/POST网络请求封装/" class="article-date">
+  <time datetime="2015-05-06T10:37:57.000Z" itemprop="datePublished">2015-05-06</time>
 </a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Objective-C/">Objective-C</a></p>
-        <p class="date"><time datetime="2015-04-07T13:57:09.000Z" itemprop="datePublished">2015-04-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/07/Foundation框架（2）-- NSArray、NSSet、NSDictionary/" class="title">Foundation框架(2) -- NSArray NSSet NSDictionary</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        NSArrayNSArray:不可变数组，数组中的元素不一定为同一个类型，以nil作为结束标示。NSArray中只能存放OC对象、不能存放非OC对象类型，比如int、float等，也不能存放nil值。 如果需要存放空对象，使用 [NSNull null]。
-初始化12NSArray *array1 = @[@&quot;aka&quot;, @&quot;boku&quot;, [NSNull null]];  //不需要nil作为结束
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>初学IOS开发阶段，一般采用Fundation框架自带的网络请求方法。使用异步的方式进行网络请求，可以使用代理的方式实现。但是在很多情况下，一个工程中许多View需要进行网络请求，一个类也会实现了很多协议，代码量变得冗余，所以将常用的请求封装起来，并在其block中回调请求得到的数据。</p>
+<figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">NetWorkRequest<span class="variable">.h</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#import <span class="title">&lt;UIKit/UIKit.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NetWorkRequest</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)postReuestURL:(<span class="built_in">NSString</span> *)url RequestParameters:(<span class="built_in">NSDictionary</span> *)parameters FinishBlock:(<span class="keyword">void</span>(^)( <span class="built_in">NSMutableDictionary</span> *receiveData)) block;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line">NetWorkRequest<span class="variable">.m</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#import <span class="title">"NetWorkRequest.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NetWorkRequest</span> ()</span></span><br><span class="line"><span class="comment">//@property (strong, nonatomic)NSData *receiveData;</span></span><br><span class="line">+ (<span class="built_in">NSMutableDictionary</span> *)dictionaryWithReceiveData:(<span class="built_in">NSData</span> *)data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NetWorkRequest</span></span></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  异步POST请求</span><br><span class="line"> *</span><br><span class="line"> *  @param url        需要请求的url</span><br><span class="line"> *  @param parameters HTTPBody</span><br><span class="line"> *  @param block      接收到的数据block</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)postReuestURL:(<span class="built_in">NSString</span> *)url RequestParameters:(<span class="built_in">NSDictionary</span> *)parameters FinishBlock:(<span class="keyword">void</span>(^)( <span class="built_in">NSMutableDictionary</span> *receiveData))block  &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//初始化url</span></span><br><span class="line">    <span class="built_in">NSURL</span> *postUrl = [<span class="built_in">NSURL</span> URLWithString:url];</span><br><span class="line">    <span class="comment">//初始化请求body</span></span><br><span class="line">    <span class="built_in">NSMutableString</span> *POSTString = [<span class="built_in">NSMutableString</span> string];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSString</span> *key <span class="keyword">in</span> parameters) &#123;</span><br><span class="line">        [POSTString appendFormat:<span class="string">@"%@=%@&amp;"</span>, key, parameters[key]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//转换为UTF8的data类型数据</span></span><br><span class="line">    <span class="built_in">NSData</span> *postData = [POSTString dataUsingEncoding:kCFStringEncodingUTF8];</span><br><span class="line">    <span class="comment">//初始化request</span></span><br><span class="line">    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:postUrl];</span><br><span class="line">    <span class="comment">//配置request</span></span><br><span class="line">    request<span class="variable">.HTTPMethod</span> = <span class="string">@"POST"</span>;</span><br><span class="line">    request<span class="variable">.HTTPBody</span> = postData;</span><br><span class="line">    request<span class="variable">.timeoutInterval</span> = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">//开始请求</span></span><br><span class="line"><span class="comment">//    __weak NetWorkRequest *weakself = self;</span></span><br><span class="line">    <span class="comment">//注意mianQueue</span></span><br><span class="line">    [<span class="built_in">NSURLConnection</span> sendAsynchronousRequest:request</span><br><span class="line">                                       queue:[NSOperationQueue mainQueue]</span><br><span class="line">                           completionHandler:^(NSURLResponse *response, <span class="built_in">NSData</span> *data, <span class="built_in">NSError</span> *connectionError) &#123;</span><br><span class="line">                               </span><br><span class="line">       block([<span class="keyword">self</span> dictionaryWithReceiveData:data]);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将得到的data转化为Dictionary</span></span><br><span class="line">+ (<span class="built_in">NSMutableDictionary</span> *)dictionaryWithReceiveData:(<span class="built_in">NSData</span> *)data &#123;</span><br><span class="line">    <span class="keyword">id</span> object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="keyword">return</span> [[<span class="built_in">NSMutableDictionary</span> alloc] initWithDictionary:object];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>上述方式只是简单的异步POST方法，还需要进一步的优化。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://sayaka.ninja/2015/05/06/POST网络请求封装/" data-id="ci9cmljwr001bshw3usbv3kji" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS/">IOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络请求/">网络请求</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-
 
             </div>
           </section>
@@ -171,6 +161,19 @@ ga('send', 'pageview');
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/04/17/block/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">block</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
