@@ -146,7 +146,7 @@ ga('send', 'pageview');
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extension SequenceType &#123;</span><br><span class="line">    func myFlatMap&lt;T: SequenceType&gt;(transform: Self.Generator.Element -&gt; T) -&gt; [T.Generator.Element] &#123;</span><br><span class="line">        var arr: [T.Generator.Element] = []</span><br><span class="line">        var tempArr: [T] = []</span><br><span class="line">        for element in self &#123;</span><br><span class="line">            tempArr.append(transform(element))</span><br><span class="line">        &#125;</span><br><span class="line">        for subSequence in tempArr &#123;</span><br><span class="line">            for element in subSequence &#123;</span><br><span class="line">                arr.append(element)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return arr</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       </div>
       <footer class="article-footer">
-        <a data-url="http://sayaka.ninja/2016/11/15/swift SequenceType 的map 和flatmap/" data-id="cikrmc4fx0007huzq7nfz8n9j" class="article-share-link">分享到</a>
+        <a data-url="http://sayaka.ninja/2016/11/15/swift SequenceType 的map 和flatmap/" data-id="ciks29zdv000b8vzqaiijnilx" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FRP/">FRP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flatmap/">flatmap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/map/">map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sequenceType/">sequenceType</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -175,9 +175,9 @@ ga('send', 'pageview');
 <nav id="article-nav">
   
   
-    <a href="/2015/10/11/swift运算符重载/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/02/18/swift中神奇的enum/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <p class="article-nav-title">swift运算符重载</p>
+      <p class="article-nav-title">swift中神奇的enum </p>
       <i class="icon" id="icon-chevron-left"></i>
     </a>
   
@@ -193,7 +193,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -203,7 +203,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/FRP/" style="font-size: 10px;">FRP</a><a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a><a href="/tags/flatmap/" style="font-size: 10px;">flatmap</a><a href="/tags/map/" style="font-size: 10px;">map</a><a href="/tags/operator/" style="font-size: 10px;">operator</a><a href="/tags/sequenceType/" style="font-size: 10px;">sequenceType</a><a href="/tags/swift/" style="font-size: 20px;">swift</a><a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
+      <a href="/tags/FRP/" style="font-size: 10px;">FRP</a><a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a><a href="/tags/enum/" style="font-size: 10px;">enum</a><a href="/tags/flatmap/" style="font-size: 10px;">flatmap</a><a href="/tags/map/" style="font-size: 10px;">map</a><a href="/tags/operator/" style="font-size: 10px;">operator</a><a href="/tags/sequenceType/" style="font-size: 10px;">sequenceType</a><a href="/tags/swift/" style="font-size: 20px;">swift</a><a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
     </div>
   </div>
 

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>swift中神奇的enum  | Swift.moe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="swift中神奇的enumswift中的enum非常强大，它具有rawvalue的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
+rawValue支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。
+12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swift中神奇的enum ">
+<meta property="og:url" content="http://sayaka.ninja/2016/02/18/swift中神奇的enum/index.html">
+<meta property="og:site_name" content="Swift.moe">
+<meta property="og:description" content="swift中神奇的enumswift中的enum非常强大，它具有rawvalue的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
+rawValue支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。
+12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="swift中神奇的enum ">
+<meta name="twitter:description" content="swift中神奇的enumswift中的enum非常强大，它具有rawvalue的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
+rawValue支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。
+12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61445500-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+  
+    <style type="text/css">
+      .logo { background-image:url(http://ppoffice.github.io/hexo-theme-hueman/css/images/logo-header.png); }
+    </style>
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                    
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="q" value="site:http://sayaka.ninja"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header">未分类</h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-swift中神奇的enum" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      swift中神奇的enum 
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2016/02/18/swift中神奇的enum/" class="article-date">
+  <time datetime="2016-02-18T08:35:48.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h1 id="swift中神奇的enum">swift中神奇的enum</h1><p>swift中的enum非常强大，它具有<code>rawvalue</code>的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：</p>
+<h2 id="rawValue">rawValue</h2><p>支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">PayMethod</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">Alipay</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Wechat</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">ApplePay</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在我们使用这些enum时，可能需要将其一一对应为中文显示，用<code>switch case</code>可以实现，但是需要在很多地方使用时每次都用<code>switch case</code>显得太繁琐了，于是<code>rawValue</code>这个优点就体现了出来：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">PayMethod</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">Alipay</span> = <span class="string">"支付宝"</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Wechat</span> = <span class="string">"微信支付"</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">ApplePay</span> = <span class="string">"苹果支付"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每次使用的时候只需要</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">PayMethod</span>.<span class="type">Alipay</span>.rawValue</span><br></pre></td></tr></table></figure>
+<p>就可以了。</p>
+<h2 id="实际应用">实际应用</h2><p>封装APIURL, 用<code>enum</code>感觉非常优雅。</p>
+<p>第一步, 先定义enum，现在假设我们这儿只有两个API，</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">APIURL</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">HomeNews</span>(skip: <span class="type">Int</span>, limit: <span class="type">Int</span>, cityId: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="type">NewsDetail</span>(newsId: <span class="type">String</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二步，给enum添加一个属性，<code>baseURL</code>，这是每个URL请求前面都要添加的，值得注意的是enum只能添加计算属性，不能添加存储属性</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> baseURL: <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">get</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"api.news.com"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三步，给每个enum添加一个属性，<code>path</code>，每个case的path都是不一样的，path会根据具体请求的参数不同而不一样。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">APIURL</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> path: <span class="type">String</span>  &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">            <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">            <span class="keyword">case</span> .<span class="type">HomeNews</span>(skip: <span class="keyword">let</span> skip, limit: <span class="keyword">let</span> limit, cityId: <span class="keyword">let</span> cityId):</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"/news?skip=<span class="subst">\(skip)</span>&amp;limit=<span class="subst">\(limit)</span>&amp;cityId=<span class="subst">\(cityId)</span>"</span></span><br><span class="line">            <span class="keyword">case</span> .<span class="type">NewsDetail</span>(newsId: <span class="keyword">let</span> newsId):</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"/news?newsId=<span class="subst">\(newsId)</span>"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第四步，添加一个<code>fullURL</code>属性，简单的将<code>baseURL</code>和<code>path</code>拼接在一起就可以了。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">APIURL</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> fullURL: <span class="type">NSURL</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">NSURL</span>(string: baseURL + path)!</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第五步，终于我们可以开始使用这个API了(只写了基本的)。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">getRequest</span><span class="params">(url: APIURL)</span> </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getRequest(.<span class="type">HomeNews</span>(skip: <span class="number">0</span>, limit: <span class="number">10</span>, cityId: <span class="string">"chengdu"</span>))</span><br></pre></td></tr></table></figure>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://sayaka.ninja/2016/02/18/swift中神奇的enum/" data-id="ciks29zds00078vzq7rhk0g04" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/enum/">enum</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/sosng"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/sosng"><i id="icon-github" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/15/swift SequenceType 的map 和flatmap/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          swift SequenceType 的map 和flatmap
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2015/10/11/swift运算符重载/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">swift运算符重载</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FRP/" style="font-size: 10px;">FRP</a><a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a><a href="/tags/enum/" style="font-size: 10px;">enum</a><a href="/tags/flatmap/" style="font-size: 10px;">flatmap</a><a href="/tags/map/" style="font-size: 10px;">map</a><a href="/tags/operator/" style="font-size: 10px;">operator</a><a href="/tags/sequenceType/" style="font-size: 10px;">sequenceType</a><a href="/tags/swift/" style="font-size: 20px;">swift</a><a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2016 sosng</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
