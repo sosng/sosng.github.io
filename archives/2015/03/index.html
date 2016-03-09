@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Swift.moe">
-<meta property="og:url" content="http://sayaka.ninja/tags/swift/index.html">
+<meta property="og:url" content="http://sayaka.ninja/archives/2015/03/index.html">
 <meta property="og:site_name" content="Swift.moe">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>swift</em></h1>
+              <h1 class="header"><i class="icon" id="icon-archive"></i>归档: 2015/3</h1>
             </div>
             <div class="main-body-content">
               
@@ -119,126 +119,35 @@ ga('send', 'pageview');
         
   <article class="article article-summary">
     <div class="article-summary-inner">
-      <a href="/2015/11/15/swift SequenceType 的map 和flatmap/" class="thumbnail">
+      <a href="/2015/03/09/iOS多线程/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
 
 </a>
       <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/swift/">swift</a></p>
-        <p class="date"><time datetime="2015-11-15T05:30:12.000Z" itemprop="datePublished">2015-11-15</time></p>
+        <p class="category"></p>
+        <p class="date"><time datetime="2015-03-09T14:40:13.000Z" itemprop="datePublished">2015-03-09</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/11/15/swift SequenceType 的map 和flatmap/" class="title">swift SequenceType 的map 和flatmap</a>
+        <a href="/2015/03/09/iOS多线程/" class="title">iOS多线程</a>
       </h2>
       <p class="article-excerpt">
         
-        swift SequenceType的map和flatmapmapswift 中的 map 函数，可以方便的对各种序列类型进行自定义的变换操作。
-例如，对某整型数组内每个元素加10
-12345let array = [0, 1, 2, 3, 4]array.map &amp;#123; (element) -&amp;gt; Int in  return element + 10&amp;#125;// [10, 11,
-      </p>
-    </div>
-  </article>
+        iOS多线程基本概念线程与进程的关系
+线程是CPU执行任务的基本单位，一个进程可以有多个线程，但同时只能执行一个任务。
+进程就是运行中的软件，是动态的。
+一个操作系统可以对应多个进程,一个进程可以有多条线程,但至少有一个线程
+同一个进程内的线程共享进程里的资源
 
-    
-  
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/10/18/swift中神奇的enum/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
+主线程
+进程一启动就自动创建
+显示和刷新UI界面
+处理UI事件子线程
+处理耗时的操作
+子线程不能用来刷新UI
 
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/swift/">swift</a></p>
-        <p class="date"><time datetime="2015-10-18T08:35:48.000Z" itemprop="datePublished">2015-10-18</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/10/18/swift中神奇的enum/" class="title">swift中神奇的enum </a>
-      </h2>
-      <p class="article-excerpt">
-        
-        swift中神奇的enumswift中的enum非常强大，它具有rawvalue的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
-rawValue支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。
-12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case 
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-    
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/10/11/swift运算符重载/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/swift/">swift</a></p>
-        <p class="date"><time datetime="2015-10-11T05:24:10.000Z" itemprop="datePublished">2015-10-11</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/10/11/swift运算符重载/" class="title">swift运算符重载</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        运算符重载实质就是一个函数
-
-支持的符号 / = - + * % &amp;lt; &amp;gt; ! &amp;amp; | ^ . ~ ⊕
-关键字
-
-
-
-
-关键字
-
-
-
-
-
-operator
-
-
-
-prefix
-前缀运算符
-
-
-postfix
-后缀运算符
-
-
-infix
-中缀运算符,
-
-
-precedence
-优先级: 0~255
-
-
-associativity
-结合性: left, right, None
-
-
-a
+串行 vs. 并发从本质
       </p>
     </div>
   </article>
