@@ -5,21 +5,21 @@
   
   <title>swift中神奇的enum  | Swift.moe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="swift中神奇的enumswift中的enum非常强大，它具有rawvalue的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
+  <meta name="description" content="swift中神奇的enumswift中的enum非常强大，它关联值的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
 rawValue支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。
-12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case">
+12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case ApplePa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swift中神奇的enum ">
 <meta property="og:url" content="http://sayaka.ninja/2015/10/18/swift中神奇的enum/index.html">
 <meta property="og:site_name" content="Swift.moe">
-<meta property="og:description" content="swift中神奇的enumswift中的enum非常强大，它具有rawvalue的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
+<meta property="og:description" content="swift中神奇的enumswift中的enum非常强大，它关联值的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
 rawValue支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。
-12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case">
+12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case ApplePa">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift中神奇的enum ">
-<meta name="twitter:description" content="swift中神奇的enumswift中的enum非常强大，它具有rawvalue的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
+<meta name="twitter:description" content="swift中神奇的enumswift中的enum非常强大，它关联值的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：
 rawValue支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。
-12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case">
+12345enum PayMethod &amp;#123;    case Alipay    case Wechat    case ApplePa">
   
   
     <link rel="icon" href="/favicon.png">
@@ -126,7 +126,7 @@ ga('send', 'pageview');
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="swift中神奇的enum">swift中神奇的enum</h1><p>swift中的enum非常强大，它具有<code>rawvalue</code>的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：</p>
+        <h1 id="swift中神奇的enum">swift中神奇的enum</h1><p>swift中的enum非常强大，它关联值的这个特性让它使用起来很方便，它还有方法和属性，让其功能更加强大。下面举一个例子：</p>
 <h2 id="rawValue">rawValue</h2><p>支付方式可以enum表示，它包涵多个case，比如支付宝、微信、Apple Pay等等。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">PayMethod</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">Alipay</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Wechat</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">ApplePay</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在我们使用这些enum时，可能需要将其一一对应为中文显示，用<code>switch case</code>可以实现，但是需要在很多地方使用时每次都用<code>switch case</code>显得太繁琐了，于是<code>rawValue</code>这个优点就体现了出来：</p>
@@ -134,7 +134,7 @@ ga('send', 'pageview');
 <p>每次使用的时候只需要</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">PayMethod</span>.<span class="type">Alipay</span>.rawValue</span><br></pre></td></tr></table></figure>
 <p>就可以了。</p>
-<h2 id="实际应用">实际应用</h2><p>封装APIURL, 用<code>enum</code>感觉非常优雅。</p>
+<h2 id="关联值">关联值</h2><p>封装APIURL, 用<code>enum</code>感觉非常优雅。</p>
 <p>第一步, 先定义enum，现在假设我们这儿只有两个API，</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">APIURL</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">HomeNews</span>(skip: <span class="type">Int</span>, limit: <span class="type">Int</span>, cityId: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="type">NewsDetail</span>(newsId: <span class="type">String</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>第二步，给enum添加一个属性，<code>baseURL</code>，这是每个URL请求前面都要添加的，值得注意的是enum只能添加计算属性，不能添加存储属性</p>
@@ -145,6 +145,7 @@ ga('send', 'pageview');
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">APIURL</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> fullURL: <span class="type">NSURL</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">NSURL</span>(string: baseURL + path)!</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>第五步，终于我们可以开始使用这个API了(只写了基本的)。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">getRequest</span><span class="params">(url: APIURL)</span> </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getRequest(.<span class="type">HomeNews</span>(skip: <span class="number">0</span>, limit: <span class="number">10</span>, cityId: <span class="string">"chengdu"</span>))</span><br></pre></td></tr></table></figure>
+
       </div>
       <footer class="article-footer">
         <a data-url="http://sayaka.ninja/2015/10/18/swift中神奇的enum/" data-id="cilkyfxwv000915zqya1hz528" class="article-share-link">分享到</a>
